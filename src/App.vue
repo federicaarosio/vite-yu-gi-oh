@@ -40,5 +40,10 @@ export default {
 </script>
 <style lang="scss">
 @use './styles/general.scss';
+@use './styles/partials/variables' as *;
+
+  main {
+    background-color: $bg-color;
+  }
   
 </style>
