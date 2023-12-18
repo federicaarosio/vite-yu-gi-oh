@@ -1,9 +1,9 @@
 <template lang="">
     <section id="cards" class="container bg-white p-5">
         <section class="bg-dark text-white container fs-6 fw-bold py-3 px-5">Found</section>
-        <div class="row">
+        <div class="row d-flex">
 
-            <article v-for="card in cardsList" :key="card.id" class="col-2 mb-5">
+            <article v-for="card in cardsList" :key="card.id" class="mb-4">
                 <SingleCard :card="card" />
             </article>
         </div>
@@ -34,5 +34,10 @@ export default {
 }
 </script>
 <style lang="scss">
-    
+    .row {
+
+        article {
+            width: calc(100% / 5);
+        }
+    }
 </style>
