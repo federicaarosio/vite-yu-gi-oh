@@ -1,7 +1,7 @@
 <template lang="">
     <section id="cards" class="container">
         <div class="row">
-            <!-- TODO: component per la singola card -->
+
             <article v-for="card in cardsList" :key="card.id" class="col-12 col-md-4 col-lg-2 mb-4">
                 <SingleCard :card="card" />
             </article>
