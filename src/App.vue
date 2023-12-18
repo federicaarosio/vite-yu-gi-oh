@@ -1,13 +1,19 @@
 <template lang="">
-  <div>
-    <h1 class="text-danger">
-      Prova
-    </h1>
-  </div>
+  <main>
+    <AppHeader />
+    <CardsList />
+  </main>
 </template>
 <script>
+import AppHeader from './components/AppHeader.vue';
+import CardsList from './components/CardsList.vue'
+
 export default {
-  name: 'AppaVue'
+  name: 'AppaVue',
+  components: {
+    AppHeader,
+    CardsList
+  }
 }
 </script>
 <style lang="scss">
