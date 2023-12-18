@@ -15,11 +15,17 @@ export default {
     AppHeader,
     CardsList
   },
+  data() {
+    return {
+      cards: [],
+    }
+  },
   methods: {
     getCards(){
       axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
-      .then(function (response) {
+      .then((response) => {
         console.log(response.data.data);
+        this.cards = response.data.data;
       })
       .catch(function (error) {
         console.log(error);
