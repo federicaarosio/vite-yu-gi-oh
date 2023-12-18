@@ -5,6 +5,7 @@
   </main>
 </template>
 <script>
+import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import CardsList from './components/CardsList.vue'
 
@@ -13,6 +14,21 @@ export default {
   components: {
     AppHeader,
     CardsList
+  },
+  methods: {
+    getCards(){
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+      .then(function (response) {
+        console.log(response.data.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    }
+  },
+  created() {
+    this.getCards();
   }
 }
 </script>
