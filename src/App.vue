@@ -1,7 +1,7 @@
 <template lang="">
   <main>
     <AppHeader />
-    <CardsList />
+    <CardsList :cardsList="cards" />
   </main>
 </template>
 <script>
