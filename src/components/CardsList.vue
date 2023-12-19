@@ -3,7 +3,7 @@
         <section class="bg-dark text-white container fs-6 fw-bold py-3 px-5">Found</section>
         <div class="row d-flex">
 
-            <article v-for="card in cardsList" :key="card.id" class="mb-4">
+            <article v-for="card in store.cardsList" :key="card.id" class="mb-4">
                 <SingleCard :card="card" />
             </article>
         </div>
@@ -26,11 +26,11 @@ export default {
         SingleCard
     },
 
-    props: {
-        cardsList: {
-            type: Array,
-        }
-    }
+    // props: {
+    //     cardsList: {
+    //         type: Array,
+    //     }
+    // }
 }
 </script>
 <style lang="scss">
