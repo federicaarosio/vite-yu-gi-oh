@@ -1,6 +1,6 @@
 <template lang="">
     <div class="container mb-4">
-        <select name="select" id="select" class="p-2"  @change="$emit('selectedType')" v-model="selectedArchetype">
+        <select name="select" id="select" class="p-2"  @change="$emit('changedType', selectedArchetype)" v-model="store.selectedArchetype">
             <option v-for="archetype in store.archetypeList" :value="archetype">{{ archetype.archetype_name }}</option>
         </select>
     </div>
@@ -11,8 +11,7 @@ import { store } from '../js/store.js';
 export default {
     data() {
         return {
-            store,
-            selectedArchetype: ""
+            store
         }
     },
 }

@@ -1,7 +1,7 @@
 <template lang="">
   <main>
     <AppHeader />
-    <AppSelect @selectedType="filterByArchetype"/>
+    <AppSelect @changedType="filterByArchetype"/>
     <CardsList :cardsList="cards" />
   </main>
 </template>
@@ -26,8 +26,8 @@ export default {
     }
   },
   methods: {
-    getCards(){
-      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+    getCards(url = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0'){
+      axios.get(url)
       .then((response) => {
         console.log(response.data.data);
         this.store.cardsList = response.data.data;
@@ -52,6 +52,11 @@ export default {
 
     filterByArchetype(){
       console.log("ho cambiato tipo");
+      console.log(this.store.selectedArchetype.archetype_name);
+
+      this.getCards('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype='+ this.store.selectedArchetype.archetype_name)
+      
+
     }
 
 
