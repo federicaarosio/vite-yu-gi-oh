@@ -18,7 +18,7 @@ export default {
     name: 'CardsList',
     data() {
         return {
-            store,
+            store
         }
     },
 

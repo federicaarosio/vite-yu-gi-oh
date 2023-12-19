@@ -1,7 +1,7 @@
 <template lang="">
   <main>
     <AppHeader />
-    <AppSelect />
+    <AppSelect @selectedType="filterByArchetype"/>
     <CardsList :cardsList="cards" />
   </main>
 </template>
@@ -50,9 +50,11 @@ export default {
 
     },
 
-    // filetrByType(){
-    //   console.log(this.store.cardTypeList)
-    // },
+    filterByArchetype(){
+      console.log("ho cambiato tipo");
+    }
+
+
   },
   created() {
     this.getCards();
