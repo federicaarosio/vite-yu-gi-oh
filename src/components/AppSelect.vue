@@ -1,6 +1,7 @@
 <template lang="">
     <div class="container mb-4">
         <select name="select" id="select" class="p-2"  @change="$emit('changedType', selectedArchetype)" v-model="store.selectedArchetype">
+            <option value="">Select an archetype...</option>
             <option v-for="archetype in store.archetypeList" :value="archetype">{{ archetype.archetype_name }}</option>
         </select>
     </div>

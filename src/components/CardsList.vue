@@ -1,6 +1,6 @@
 <template lang="">
     <section id="cards" class="container bg-white p-5">
-        <section class="bg-dark text-white container fs-6 fw-bold py-3 px-5">Found</section>
+        <AppCardFound />
         <div class="row d-flex">
 
             <article v-for="card in store.cardsList" :key="card.id" class="mb-4">
@@ -12,6 +12,7 @@
 </template>
 <script>
 import {store} from '../js/store.js';
+import AppCardFound from './AppCardFound.vue';
 import SingleCard from './SingleCard.vue';
 
 export default {
@@ -23,7 +24,8 @@ export default {
     },
 
     components: {
-        SingleCard
+        SingleCard,
+        AppCardFound
     },
 
     // props: {
