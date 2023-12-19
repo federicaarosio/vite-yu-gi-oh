@@ -1,13 +1,19 @@
 <template lang="">
     <div class="container mb-4">
         <select name="select" id="select" class="p-2">
-            <option value="">Archetipo da selezionare</option>
+            <option v-for="archetype in store.archetypeList" :value="archetype">{{ archetype.archetype_name }}</option>
         </select>
     </div>
 </template>
 <script>
+import { store } from '../js/store.js';
+
 export default {
-    
+    data() {
+        return {
+            store
+        }
+    },
 }
 </script>
 <style lang="">

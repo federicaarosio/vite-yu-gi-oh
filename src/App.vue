@@ -36,10 +36,27 @@ export default {
         console.log(error);
       });
 
-    }
+    },
+
+    getArchetype(){
+      axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+      .then((response) => {
+        console.log(response.data);
+        this.store.archetypeList = response.data;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    },
+
+    // filetrByType(){
+    //   console.log(this.store.cardTypeList)
+    // },
   },
   created() {
     this.getCards();
+    this.getArchetype();
   }
 }
 </script>
